@@ -60,7 +60,7 @@ def cli(interpreter):
   LOCAL_RUN = os.getenv('INTERPRETER_CLI_LOCAL_RUN', 'False') == 'True'
   DEBUG = os.getenv('INTERPRETER_CLI_DEBUG', 'False') == 'True'
   USE_AZURE = os.getenv('INTERPRETER_CLI_USE_AZURE', 'False') == 'True'
-  USE_SYSTEM_MESSAGE = os.getenv('INTERPRETER_CLI_USE_SYSTEM_MESSAGE', '')
+  SYSTEM_MESSAGE = os.getenv('INTERPRETER_CLI_SYSTEM_MESSAGE', '')
 
   # Setup CLI
   parser = argparse.ArgumentParser(description='Chat with Open Interpreter.')
@@ -113,7 +113,7 @@ def cli(interpreter):
   parser.add_argument('--system_message',
                       type=str,
                       help='append the given string to the beginning of every message',
-                      default=USE_SYSTEM_MESSAGE,
+                      default=SYSTEM_MESSAGE,
                       required=False)
   
   parser.add_argument('--use-azure',
